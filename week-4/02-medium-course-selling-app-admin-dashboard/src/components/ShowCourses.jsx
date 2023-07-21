@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 function ShowCourses() {
@@ -7,7 +8,7 @@ function ShowCourses() {
     // and set it in the courses state variable.
     return <div>
         <h1>Create Course Page</h1>
-        {courses.map(c => <Course title={c.title} />)}
+        {courses.map(c => {<Course title={c.title} />})}
     </div>
 }
 
