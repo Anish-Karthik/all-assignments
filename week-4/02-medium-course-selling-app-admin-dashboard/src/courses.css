@@ -1,0 +1,29 @@
+.card {
+  /* want all cards to evenly sized */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 240px;
+  cursor: pointer;
+}
+.card > * {
+  width: 100%;
+}
+.card .title, .description {
+  width: 100%;
+  /* height: 30px; */
+  /* max-width: 200px; */
+}
+.card img {
+  object-fit: cover;
+}
+
+.course-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+}

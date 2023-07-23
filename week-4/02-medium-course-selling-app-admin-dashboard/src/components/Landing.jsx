@@ -1,6 +1,10 @@
 
 import { useState, useEffect } from "react";
-import {Button, Card} from "@mui/material";
+import {Card} from "@mui/material";
+import Button from "@mui/material/Button";
+
+// import css file named app which is one level abiove this file
+import "../App.css";
 
 /// This is the landing page. You need to add a link to the login page here.
 /// Maybe also check from the backend if the user is already logged in and then show them a logout button
@@ -22,24 +26,23 @@ function Landing() {
     }
 
 
-    return <Card>
+    return <Card className={'container'}>
         <h1>Welcome to course selling website!</h1>
         <Button
             onClick={() => {window.location.href='/register'}} 
-            style={{backgroundColor: "brown"}} 
-        >Register</Button>
-        <br/>
+            className={"btn"}
+            variant="contained"
+        >Admin Register</Button>
         <Button
             onClick={() => {window.location.href='/login'}} 
-            style={{backgroundColor: "brown"}} 
-        >Login</Button>
+            className={"btn"}
+            variant="contained"
+        >Admin Login</Button>
         {isLoggedIn && 
-            <>
-                <br/>
-                <a href="/courses">Courses</a>
-                <br/>
-                <a onClick={Logout}>Logout</a>
-            </>
+        <>
+            <Button variant="contained" onClick={Logout}>Logout</Button>
+            <a href="/courses">Courses</a>
+        </>
         }
     </Card>
 }
